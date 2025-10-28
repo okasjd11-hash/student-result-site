@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Student Result Portal 🎓</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎓 Live Student Result Portal</h1>
+
+    <div class="search-box">
+      <input type="text" id="rollInput" placeholder="Enter Roll Number">
+      <button onclick="getResult()">Show Result</button>
+    </div>
+
+    <div id="result-card" class="card hidden">
+      <h2 id="student-name"></h2>
+      <p><strong>Roll No:</strong> <span id="student-roll"></span></p>
+      <p><strong>Class:</strong> <span id="student-class"></span></p>
+      <hr>
+      <div id="marks"></div>
+      <canvas id="marksChart"></canvas>
+      <hr>
+      <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
+      <p><strong>Grade:</strong> <span id="grade"></span></p>
+    </div>
+
+    <p id="notfound" class="hidden notfound">❌ No record found for this roll number.</p>
+  </div>
+
+  <canvas id="confetti"></canvas>
+  <footer>Made with ❤️ by Ojas</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
