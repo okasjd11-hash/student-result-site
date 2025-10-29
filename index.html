@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Student Result Portal 🎓</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Result Portal</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">🎓 Live Student Result Portal</h1>
+    <header>
+        <h1>🎓 Student Result Portal</h1>
+        <p>Paste your Google Sheet CSV link and check your result instantly</p>
+    </header>
 
-    <div class="search-box">
-      <input type="text" id="rollInput" placeholder="Enter Roll Number">
-      <button onclick="getResult()">Show Result</button>
-    </div>
+    <section class="upload-section">
+        <input type="text" id="csvLink" placeholder="Paste CSV Link from Google Sheets">
+        <button id="loadCsvBtn">📥 Load Data</button>
+    </section>
 
-    <div id="result-card" class="card hidden">
-      <h2 id="student-name"></h2>
-      <p><strong>Roll No:</strong> <span id="student-roll"></span></p>
-      <p><strong>Class:</strong> <span id="student-class"></span></p>
-      <hr>
-      <div id="marks"></div>
-      <canvas id="marksChart"></canvas>
-      <hr>
-      <p><strong>Percentage:</strong> <span id="percentage"></span>%</p>
-      <p><strong>Grade:</strong> <span id="grade"></span></p>
-    </div>
+    <section class="search-section">
+        <input type="text" id="nameInput" placeholder="Enter Your Name (e.g. Rahul)">
+        <input type="text" id="classInput" placeholder="Enter Your Class (e.g. 7B)">
+        <select id="testType">
+            <option value="">Select Test Type</option>
+            <option value="Midterm">Midterm</option>
+            <option value="Final">Final</option>
+            <option value="Unit Test 1">Unit Test 1</option>
+            <option value="Unit Test 2">Unit Test 2</option>
+        </select>
+        <button id="searchBtn">🔍 Get Result</button>
+    </section>
 
-    <p id="notfound" class="hidden notfound">❌ No record found for this roll number.</p>
-  </div>
+    <section id="resultSection" class="hidden">
+        <h2>Your Result</h2>
+        <div id="studentInfo"></div>
+        <table id="resultTable">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+        <button id="downloadBtn" class="hidden">📜 Download Marksheet PDF</button>
+    </section>
 
-  <canvas id="confetti"></canvas>
-  <footer>Made with ❤️ by Ojas</footer>
+    <footer>
+        <p>© 2025 Student Result Portal | Designed by Ojas</p>
+    </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
